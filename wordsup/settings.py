@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+import environ
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-fi-!#!-73&#i6r!&%fm(+=0#fsfx#qdhn!ght2og+k#j2fnwc*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['wordsup.uz', '164.92.169.129']
 
 
 # Application definition
@@ -65,13 +65,14 @@ WSGI_APPLICATION = 'wordsup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'wordsupu_undo',
-        'USER': 'wordsupu_unuser',
-        'PASSWORD': '20077002Q!qW1Qwgmail.comI!3e',
-        'HOST': '164.92.169.129',
-        'PORT': '8080',
+        'NAME': os.environ.get('POSTGRES_DB', 'postgres'),
+        'USER': os.environ.get('POSTGRES_USER', 'postgres'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'postgres'),
+        'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
