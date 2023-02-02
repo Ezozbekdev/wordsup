@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Words Up - About Us</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+  <header>
+    <div id="menu-container">
+      <h1 class="logo"><em>WordsUp</em></h1>
+      <div class="menu-icon" onclick="openNav()"><button class="unnd">Menu</button></div>
+      <div id="menu-sidebar" class="menu-sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'learn' %}">Learn</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+          {% endif %}
+        </ul>
+      </div>
+  </header>
+  <div class="main" style="text-align: center;">
+    <h2>About Words Up</h2>
+    {% for ab in about %}
+    <p>{{ ab.content}}</p>
+       <hr>
+      <em> Created: {{ ab.created_at }}</em>
+      <em>Update About: {{ ab.updated_at }}</em>
+    {% endfor %}
+  </div>
+  <div class="footer">
+    <footer>
+        <p>&copy; Words Up 2023</p>
+        <p>Contact us: info@wordsup.uz</p>
+    </footer>
+   </div>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

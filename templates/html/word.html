@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English - Uzbek in WordsUp</title>
+    <link rel="stylesheet" href="{% static 'css/word.css' %}">
+</head>
+<body>
+    <header>
+        <div id="menu-container">
+          <h1 class="logo"><em>WordsUp</em></h1>
+          <div class="menu-icon" onclick="openNav()"><button class="unnd">Menu</button></div>
+          <div id="menu-sidebar" class="menu-sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="{% url 'learn' %}">Learn</a></li>
+              {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+              {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+              {% endif %}
+            </ul>
+          </div>
+    </header>
+<br>
+<div>
+
+</div>
+  <div class="word-container" id="word-container-1" style="display:none;">
+    <p>This page work demo version </p>
+        <ul class="uls">
+          
+          <li class="lis">
+                <div><h1>English</h1></div> to 
+                <div><h1>Uzbek</h1></div>
+            </li>
+            <hr>
+            <br>
+          {% for x in words %}
+            <li>
+              <div class="english">{{ x.word_en }}</div>
+              <div class="uzbek">{{ x.word_uz }}</div>
+              <br>
+            </li>
+            <hr>
+          <br>
+          {% endfor %}  
+          
+        </ul>
+        <button class="close-button">Close</button>
+  </div>
+  
+  
+  <div style="text-align: center;">
+    <button class="word-btn" id="word-btn-1">1</button>
+
+  </div>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/Jquery.js' %}"></script>
+
+</body>
+</html>

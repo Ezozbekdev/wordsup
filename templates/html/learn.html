@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Word Memorization</title>
+     <link rel="stylesheet" href="{% static 'css/learn.css' %}">
+</head>
+<body>
+<header>
+  <div id="menu-container">
+    <h1 class="logo"><em>WordsUp</em></h1>
+    <div class="menu-icon" onclick="openNav()"><button class="unnd">Menu</button></div>
+    <div id="menu-sidebar" class="menu-sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'learn' %}">Learn</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+      </ul>
+    </div>
+</header>
+<div id="level-container" class="dos">
+  <p><em>Do't forget</em> 1 - A1, 2 - A2, 3 - B1, 4 - B2, 5 - C1,6 - C2</p>
+  <h2>Select Your Level</h2>
+  <br>
+  <br>
+  <form action="{% url 'word' %}" method="get">
+    <select name="level">
+      <option value="1">A1 Basic/Elementary</option>
+      <option value="2">A2: Elementary/Pre-Intermediate</option>
+      <option value="3">B1: Intermediate</option>
+      <option value="4">B2: Upper-Intermediate</option>
+      <option value="5">C1: Advanced</option>
+      <option value="6">C2: Proficient</option>
+    </select>
+    <input type="submit" value="Select">
+  </form>  
+</div>
+
+
+<div class="footer">
+  <p>Copyright © 2023 Words Up</p>
+    <p>Contact us: info@wordsup.uz</p>
+    <a href="https://t.me/wordsup">Telegram</a>
+    <br>
+
+</div>
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+

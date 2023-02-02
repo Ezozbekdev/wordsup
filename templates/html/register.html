@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/reg.css' %}">
+</head>
+<body>
+    <div class="und">
+<!-- HTML for the login form -->
+
+<div class="menu">
+    <nav>
+        <ul>
+            <li><a href="{% url 'home'  %}"><button class="unnd">Home</button></a></li>
+            <li><a href="{% url 'about' %}"><button class="unnd">About</button></a></li>
+            <li><a href="{% url 'learn' %}"><button class="unnd">Learn</button></a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<canvas id="canvas"></canvas>
+<!-- HTML for the registration form -->
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password1" required>
+    </div>
+    <div class="form-group">
+      <label for="password_confirm">Confirm Password</label>
+      <input type="password" class="form-control" id="password_confirm" name="password2" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+  <script src="{% static 'js/index.js'%}">
+
+  </script>
+</body>
+</html>

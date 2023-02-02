@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Word Memorization</title>
+     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+<header>
+  <div id="menu-container">
+    <h1 class="logo"><em>WordsUp</em></h1>
+    <div class="menu-icon" onclick="openNav()"><button class="unnd">Menu</button></div>
+    <div id="menu-sidebar" class="menu-sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'learn' %}">Learn</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+      </ul>
+    </div>
+</header>
+<div class="main-content">
+  <h1> Welcome to the <em>Words Up</em> website!</h1>
+  <p style=" text-align: center;">Words Up is a simple yet effective word memorization platform that helps users improve their vocabulary and language skills. With its user-friendly interface and engaging content, Words Up makes learning new words fun and easy. Whether you're a student, a professional, or just someone who wants to expand their vocabulary, Words Up has something for everyone. From flashcards to interactive quizzes, Words Up offers a variety of tools and resources to help users memorize new words and retain the information. With its innovative approach to language learning, Words Up is the perfect tool to help you take your language skills to the next level.</p>
+  <a href=""><button class="btn-go">Let's learn new words</button></a>
+</div>
+
+<div class="footer">
+  <p>Copyright © 2023 Words Up</p>
+    <p>Contact us: info@wordsup.uz</p>
+    <a href="https://t.me/wordsup_bot">Telegram</a>
+    <br>
+
+</div>
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+

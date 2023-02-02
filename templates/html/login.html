@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/log.css' %}">
+</head>
+<body >
+<div class="und">
+<!-- HTML for the login form -->
+
+<div class="menu">
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}"><button class="unnd">Home</button></a></li>
+            <li><a href="{% url 'about' %}"><button class="unnd">About</button></a></li>
+            <li><a href="{% url 'learn' %}"><button class="unnd">Learn</button></a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<canvas id="canvas"></canvas>
+<br>
+<br>
+<br>
+    <form class="login-form" method="post">
+        {% csrf_token %}
+        <h1 style="text-align: center;">Login</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button class="login-button"  type="submit">Login</button>
+        <br>
+        <a href="{% url 'register' %}" class="form-switch">Don't have an account? Register here</a>
+    </form>
+  
+</div>
+  <script src="{% static 'js/index.js' %}">
+
+  </script>
+</body>
+</html>

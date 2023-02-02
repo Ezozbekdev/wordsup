@@ -1,0 +1,174 @@
+header {
+    background-color: #fbfbfb;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    height: 40px;
+    }
+    
+    nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    }
+    
+    nav li {
+    float: left;
+    }
+    
+    /* nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    } */
+
+    /* nav a:hover {
+    background-color: #111;
+    }
+     /* */
+    .main-content {
+    padding: 50px;
+    text-align: center;
+    }
+
+    
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #f5f5f5;
+        text-align:center;
+     }
+     
+     .footer a {
+        color: #000000;
+        font-size: 14px;
+        text-decoration: none;
+        margin-right: 20px;
+     }
+
+    .btn-go{
+      height: 50px;
+      border-radius: 100px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor:pointer;
+    
+    }
+    .btn-go:hover{
+      background-color: blue;
+      border-radius: 0px;
+      transition: 1s;
+      text-decoration:double;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nav ul li {
+        border-radius: 10px;
+        padding: 10px;
+    }
+    @media (max-width: 729px) {
+        nav {
+            width: auto;
+        }
+    }
+    .unnd {
+      border: none;
+        border-radius: 60px;
+        width: 100px;
+        height: 40px;
+        float: right;
+        margin: 0px 10px;
+        color: white;
+        background-color: #4CAF50;
+    }
+    .unnd:hover{
+      background-color: blue;
+      transition: 0.9s;
+      border-radius: 10px;
+      height: 50px;
+      width: 120px;
+      margin: 0px;
+
+    }
+    .logo {
+      float: left;
+      margin: 0px 10px;
+    }
+    /* Hide menu by default */
+
+      @media (max-width: 729px) {
+        .menu-icon {
+          display: none;
+        }
+        .menu {
+          display: flex;
+        }
+        .unnd{
+          float: right;
+          margin: 0px 10px;
+        }
+        .logo{
+          float: left;
+          margin: 0px 10px;
+        }
+        header {
+          background-color: #fbfbfb;
+          text-align: center;
+          padding: 20px;
+          margin: 10px;
+          height: 50px;
+        }
+        .menu-icon {
+          display: block;
+          font-size: 2em;
+          cursor: pointer;
+        }
+      }
+      .menu-sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #000000;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+      .menu-sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 1.2em;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      .menu-sidebar a:hover {
+        color: #f1f1f1;
+      }
+      .menu-sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 1.5em;
+        margin-left: 50px;
+      }
+      @media (min-width: 782px) {
+        /* styles for screens larger than 782px */
+        .menu {
+          display: none;
+        }
+      }
+      
